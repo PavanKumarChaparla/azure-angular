@@ -17,7 +17,7 @@ export class DataComponent implements OnInit {
   students = [
     {"name":"Bob","height":"1","author":"bob","keywords":"This aint Bob", "picture":"https://webappsbm.blob.core.windows.net/webappsbm/dhru.jpg"},
     {"name":"NotBob","height":"2500","author":"bob","keywords":"Also not Bob", "picture":"https://webappsbm.blob.core.windows.net/webappsbm/pluto.jpg"},
-    {"name":"Mars","height":"4","author":"alice","keywords":"", "picture":"https://webappsbm.blob.core.windows.net/webappsbm/mars.jpg"},
+    {"name":"Mars","height":"4","author":"alice","keywords":"", "picture":""},
     {"name":"Curly","height":"4550","author":"moon","keywords":"Curly is teaching classes", "picture":"https://webappsbm.blob.core.windows.net/webappsbm/curly.png"},
     {"name":"Moon","height":"1800","author":"","keywords":"", "picture":""},
     {"name":"Steve","height":"","author":"steve","keywords":"The moon wow the moon", "picture":""},
