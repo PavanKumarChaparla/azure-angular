@@ -1,0 +1,20 @@
+.names{
+    text-decoration: underline;
+    color: blueviolet;
+    cursor: pointer;
+    margin-top: 2%;
+}
+.buttons{
+    text-align: center;
+}
+.heading{
+    text-align: center;
+}
+
+.divcenter{
+    margin-left: 40%;
+}
+.sep{
+    margin-top:5%;
+
+}

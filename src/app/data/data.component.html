@@ -1,0 +1,87 @@
+<h1 class="heading">Welcome to the  Web Page</h1>
+<h1 class="heading"> Name: Pavan Kumar Chaparla</h1>
+<h1 class="heading"> Id: 1001865675</h1>
+<p class="heading">Choose one of the below option:</p>
+<div class="buttons">
+    <div class="names" (click) = "displayPersons()">Display Persons</div>
+    <div class="names" (click) = "selectHeights()">Search for heights in a given range</div>
+    <div class="names" (click) = "editKeywords()">Edit Keywords</div>
+    <!--
+    <div class="names" (click) = "addPicture()">Add Pictures</div>
+    <div class="names" (click) = "removePicture()">Remove Picture</div>
+    <div class="names" (click) = "editKeywords()">Edit Keywords</div>
+    <div class="names" (click) = "editSalaries()">Edit Salaries</div>-->
+</div>
+<div class="divcenter" *ngIf="click1">
+     <li *ngFor="let p of students">
+        <div class="sep">
+            <div *ngIf="!p.picture">
+                Picture UnAvailable
+            </div>
+            <img *ngIf="p.picture" [src]="p.picture" height=10%, width=10%>
+            <p>Name: {{p.name}}</p>
+            <p>The keyword for this person is: {{p.keywords}}</p>
+            <p>The height of this person is : {{p.height}}</p>
+            <p>Author:{{p.author}}</p>
+        </div>
+
+        
+    </li>
+</div>
+
+<div class="divcenter" *ngIf="click2">
+    <p>Enter the range of heights below</p>
+   Range1:  <input type="text" id="height1" name="fname"><br><br>
+    Range2: <input type="text" id="height2" name="fname"><br><br>
+    <input type="submit" (click)="rangeofheights()">
+    <li *ngFor="let p of studentsHeights">
+        <div class="sep">
+            <div *ngIf="!p.picture">
+                Picture UnAvailable
+            </div>
+            <img *ngIf="p.picture" [src]="p.picture" height=10%, width=10%>
+            <p>Name: {{p.name}}</p>
+            <p>The keyword for this person is: {{p.keywords}}</p>
+            <p>The height of this person is : {{p.height}}</p>
+            <p>Author:{{p.author}}</p>
+        </div>
+
+        
+    </li>
+</div> 
+
+<div class="divcenter" *ngIf="click3">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name3" name="fname"><br><br>
+    <p>Enter the Keyword to the person</p>
+    <input type="text" id="keyword" name="fname"><br><br>
+    <input type="submit" (click)="editKeyword()">
+</div> 
+<!--
+<div *ngIf="click3">
+    <p>Enter the name of the person</p>
+   
+</div> 
+<div class="divcenter" *ngIf="click4">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name2" name="fname"><br><br>
+    <input type="submit" (click)="delete()">
+</div> 
+
+<div class="divcenter" *ngIf="click5">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name3" name="fname"><br><br>
+    <p>Enter the Keyword to the person</p>
+    <input type="text" id="keyword" name="fname"><br><br>
+    <input type="submit" (click)="editKeyword()">
+</div> 
+
+<div class="divcenter" *ngIf="click6">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name3" name="fname"><br><br>
+    <p>Enter the Salary of the person to change</p>
+    <input type="text" id="salary" name="fname"><br><br>
+    <input type="submit" (click)="editSalary()">
+</div> 
+
+--> 
