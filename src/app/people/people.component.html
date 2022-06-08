@@ -1,0 +1,7 @@
+<p>List of Students</p>
+<div>
+    <li *ngFor="let student of students"><a class="names" (click)="eventClick(student)" >{{ student.name }}</a></li>
+</div>
+<div *ngIf="clicked">
+    <img [src]="img" height=50%, width=50%>
+</div> 
