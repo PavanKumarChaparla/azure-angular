@@ -1,7 +1,52 @@
-<p>List of Students</p>
-<div>
-    <li *ngFor="let student of students"><a class="names" (click)="eventClick(student)" >{{ student.name }}</a></li>
+<h1 class="heading">Welcome to the Static Web Page</h1>
+<p class="heading">Choose one of the below option:</p>
+<div class="buttons">
+    <div class="names" (click) = "displayPersons()">Display Persons</div>
+    <div class="names" (click) = "salaried()">Display Salary less than 9900</div>
+    <div class="names" (click) = "addPicture()">Add Pictures</div>
+    <div class="names" (click) = "removePicture()">Remove Picture</div>
+    <div class="names" (click) = "editKeywords()">Edit Keywords</div>
+    <div class="names" (click) = "editSalaries()">Edit Salaries</div>
 </div>
-<div *ngIf="clicked">
-    <img [src]="img" height=50%, width=50%>
+<div class="divcenter" *ngIf="click1">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name" name="fname"><br><br>
+    <input type="submit" (click)="search()">
+    <div *ngIf="img">
+        <img [src]="img" height=20%, width=20%>
+        <p>The keyword for this person is: {{student.keywords}}</p>
+    </div>
+    <div *ngIf="!img && searched">
+        Picture Not Available
+    </div>
+</div> 
+<div class="divcenter" *ngIf="click2">
+    <li *ngFor="let p of salariedpeople">
+        <img [src]="p.picture" height=20%, width=20%>
+    </li>
+</div> 
+<div *ngIf="click3">
+    <p>Enter the name of the person</p>
+   
+</div> 
+<div class="divcenter" *ngIf="click4">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name2" name="fname"><br><br>
+    <input type="submit" (click)="delete()">
+</div> 
+
+<div class="divcenter" *ngIf="click5">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name3" name="fname"><br><br>
+    <p>Enter the Keyword to the person</p>
+    <input type="text" id="keyword" name="fname"><br><br>
+    <input type="submit" (click)="editKeyword()">
+</div> 
+
+<div class="divcenter" *ngIf="click6">
+    <p>Enter the name of the person</p>
+    <input type="text" id="name3" name="fname"><br><br>
+    <p>Enter the Salary of the person to change</p>
+    <input type="text" id="salary" name="fname"><br><br>
+    <input type="submit" (click)="editSalary()">
 </div> 
