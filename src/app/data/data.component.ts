@@ -14,6 +14,7 @@ export class DataComponent implements OnInit {
   click4=false;
   click5=false;
   click6 = false;
+  click7 = false;
   searched=false;
   studentsHeights: any;
   img: any;
@@ -42,6 +43,7 @@ export class DataComponent implements OnInit {
     this.click4=true;
     this.click5=false;
     this.click6 = false;
+    this.click7 = false;
 
   }
 
@@ -52,6 +54,7 @@ export class DataComponent implements OnInit {
     this.click4=false;
     this.click5=false;
     this.click6 = false;
+    this.click7 = false;
 
 
 
@@ -63,6 +66,7 @@ export class DataComponent implements OnInit {
     this.click4=false;
     this.click5=false;
     this.click6 = false;
+    this.click7 = false;
 
 
   }
@@ -73,6 +77,7 @@ export class DataComponent implements OnInit {
     this.click4=false;
     this.click5=false;
     this.click6 = false;
+    this.click7 = false;
 
 
   }
@@ -84,6 +89,8 @@ export class DataComponent implements OnInit {
     this.click4=false;
     this.click5=true;
     this.click6 = false;
+    this.click7 = false;
+
 
   }
 
@@ -94,6 +101,33 @@ export class DataComponent implements OnInit {
     this.click4=false;
     this.click5=false;;
     this.click6 = true;
+    this.click7 = false;
+  }
+
+  editPicture(){
+    this.click7 = true;
+    this.click1=false;
+    this.click2=false;
+    this.click3=false;
+    this.click4=false;
+    this.click5=false;;
+    this.click6 = false;
+  }
+
+  onFileChanged(event:any) {
+    const file = event.target.files[0];
+    const input = document.getElementById('nameForPicture') as HTMLInputElement | null;
+    for(var i=0;i<this.students.length;i++){
+      if(input?.value == this.students[i].name){
+        this.students[i].name = input.value;
+        this.students[i].picture = "../../assets/"+file.name;
+      }
+    }
+  }
+
+  changePicture(){
+    alert("Picture Changed Succesfully");
+
   }
 
   editKeyword(){

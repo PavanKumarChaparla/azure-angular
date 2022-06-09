@@ -8,6 +8,7 @@
     <div class="names" (click) = "search()">Search People</div>
     <div class="names" (click) = "selectHeights()">Search for People in a given range of Numbers</div>
     <div class="names" (click) = "editKeywords()">Edit Keywords</div>
+    <div class="names" (click) = "editPicture()">Edit Picture</div>
    <!--<div class="names" (click) = "editKeywords()">Edit Keywords</div>-->
    <div class="names" (click) = "addEntry()">Add Entry</div>
    <div class="names" (click) = "deleteEntry()">Delete Entry</div>
@@ -94,6 +95,14 @@
     <p>Enter the name of the person</p>
     <input type="text" id="name2" name="fname"><br><br>
     <input type="submit" (click)="delete()">
+</div>  
+
+<div class="divcenter" *ngIf="click7">
+    <p>Enter the name of the person</p>
+    <input type="text" id="nameForPicture" name="fname"><br><br>
+    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+    <button (click)="fileInput.click()">Select File</button>
+    <input type="submit" (click)="changePicture()">
 </div>  
 
 
