@@ -28,6 +28,8 @@ export class PeopleComponent implements OnInit {
 
   }
 
+  
+
   search(){
     const input = document.getElementById('name') as HTMLInputElement | null;
     console.log(input?.value);
