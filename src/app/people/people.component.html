@@ -1,13 +1,31 @@
 <h1 class="heading">Welcome to the Static Web Page</h1>
 <p class="heading">Choose one of the below option:</p>
 <div class="buttons">
-    <div class="names" (click) = "displayPersons()">Display Persons</div>
-    <div class="names" (click) = "salaried()">Display Salary less than 9900</div>
+    <div class="names" (click) = "displayAll()">Display All</div>
+    <div class="names" (click) = "displayPersons()">Search People By Name</div>
+    <div class="names" (click) = "salaried()">Display People with Salary less than 9900</div>
     <div class="names" (click) = "addPicture()">Add Pictures</div>
     <div class="names" (click) = "removePicture()">Remove Picture</div>
     <div class="names" (click) = "editKeywords()">Edit Keywords</div>
     <div class="names" (click) = "editSalaries()">Edit Salaries</div>
 </div>
+
+<div class="divcenter" *ngIf="click7">
+    <li *ngFor="let p of students">
+       <div class="sep">
+           <div *ngIf="!p.picture">
+               Picture UnAvailable
+           </div>
+           <img *ngIf="p.picture" [src]="p.picture" height=10%, width=10%>
+           <p>Name: {{p.name}}</p>
+           <p>The keyword for this person is: {{p.keywords}}</p>
+           <p>The salary of this person is : {{p.salary}}</p>
+       </div>
+
+       
+   </li>
+</div>
+
 <div class="divcenter" *ngIf="click1">
     <p>Enter the name of the person</p>
     <input type="text" id="name" name="fname"><br><br>
@@ -22,12 +40,16 @@
 </div> 
 <div class="divcenter" *ngIf="click2">
     <li *ngFor="let p of salariedpeople">
+        <p>Name: {{p.name}}</p>
         <img [src]="p.picture" height=20%, width=20%>
     </li>
 </div> 
 <div *ngIf="click3">
     <p>Enter the name of the person</p>
-   
+    <input type="text" id="nameForPicture" name="fname"><br><br>
+    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+    <button (click)="fileInput.click()">Select File</button>
+    <input type="submit" (click)="changePicture()">
 </div> 
 <div class="divcenter" *ngIf="click4">
     <p>Enter the name of the person</p>
